@@ -1,3 +1,4 @@
-altair
+camelot-py[cv]
 pandas
 streamlit
+camelot-py
