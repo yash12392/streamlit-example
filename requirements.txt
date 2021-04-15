@@ -1,4 +1,5 @@
-camelot-py[cv]
+openpyxl
 pandas
 streamlit
-camelot-py
+xlwt
+jugaad-data
