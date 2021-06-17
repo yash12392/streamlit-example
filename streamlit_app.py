@@ -114,7 +114,12 @@ if __name__ == '__main__':
             try:
                 newDf = return_live_file(df, expiryDate)
             except UnboundLocalError:
-                placeholder1.error("Please Note Only Last Thursday of Trading Month Can be Selected, If Last Thursday is Holiday, Please Select Previous Working Day.")
+                if expiryDate == last_thursday.strftime("%d-%b-%Y"):
+                    st.error("The file has an incorrect ticker present in the file, please see the blue box above to know which one.")
+                    st.stop()
+                else:
+                    placeholder1.error("Please Note Only Last Thursday of Trading Month Can be Selected, If Last Thursday is Holiday, Please Select Previous Working Day.")
+                    st.stop()
 
             placeholder1.success("Your File Has Been Populated with Live Prices, You will get a Download Option Below the Table.")
             
@@ -126,4 +131,4 @@ if __name__ == '__main__':
                 st.markdown(download_button_str, unsafe_allow_html=True)
             except NameError:
                 placeholder1.error("Please Note Only Last Thursday of Trading Month Can be Selected, If Last Thursday is Holiday, Please Select Previous Working Day.")
-
+                st.stop()
