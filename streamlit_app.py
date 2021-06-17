@@ -115,7 +115,7 @@ if __name__ == '__main__':
                 newDf = return_live_file(df, expiryDate)
             except UnboundLocalError:
                 if expiryDate == last_thursday.strftime("%d-%b-%Y"):
-                    st.error("The file has an incorrect ticker present in the file, please see the blue box above to know which one.")
+                    st.error("There is an incorrect ticker present in the file, please see the blue box above to know which one.")
                     st.stop()
                 else:
                     placeholder1.error("Please Note Only Last Thursday of Trading Month Can be Selected, If Last Thursday is Holiday, Please Select Previous Working Day.")
